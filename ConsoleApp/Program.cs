@@ -27,9 +27,9 @@ namespace ConsoleApp
         }
 
         /// <summary>
-        /// A private method
+        /// A private method that asks for an integer to set the size of an array of pupil
         /// </summary>
-        /// <returns></returns>
+        /// <returns>The size of an array of pupil</returns>
         private static int SetSizeOfPupilArray()
         {
             Console.Write("Bitte maximale Anzahl der Schüler eingeben: ");
@@ -43,11 +43,13 @@ namespace ConsoleApp
             int maxPupils = SetSizeOfPupilArray();
             Pupil[] pupils = new Pupil[maxPupils];
 
+            //Fill array with pupils
             for (int i = 0; i < maxPupils; i++)
             {
                 pupils[i] = CreateNewPupil();
             }
 
+            //Look for pupil, where the firstname equals a lookup name and print them to console
             do
             {
                 Console.Write("Welcher Vorname ist gesucht <# zum Beenden>: ");
@@ -61,7 +63,8 @@ namespace ConsoleApp
                     }
                 }
                 Console.Write("Bitte beliebige Taste zum Fortsetzen");
-                Console.ReadKey()
+                Console.ReadKey();
+                Console.Clear();
             } while (firstNameToLookFor != "#");
         }
     }
